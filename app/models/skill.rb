@@ -3,4 +3,9 @@ class Skill < ActiveRecord::Base
 
   has_many :talents
   has_many :users, through: :talents
+
+  def user_with_proficiency(value)
+    talent = self.talents.where(rating: value).first
+    talent.user
+  end
 end

@@ -1,6 +1,6 @@
 class Talent < ActiveRecord::Base
   # Remember to create a migration!
-  before_save :init_defaults
+  before_create :init_defaults
 
   belongs_to :user
   belongs_to :skill
